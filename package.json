@@ -1,0 +1,35 @@
+{
+  "name": "gb-sofwares",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass assets/scss/index.scss assets/css/style.css --style=compressed --no-source-map",
+    "watch:css": "sass assets/scss/index.scss assets/css/style.css --watch",
+    "copy:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/bootstrap.bundle.min.js",
+    "copy:fonts": "mkdir -p assets/fonts && cp node_modules/bootstrap-icons/font/fonts/* assets/fonts/",
+    "build": "npm run build:css && npm run copy:js && npm run copy:fonts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielBerg4mini/GB-Softwares.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielBerg4mini/GB-Softwares/issues"
+  },
+  "homepage": "https://github.com/GabrielBerg4mini/GB-Softwares#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "sass": "^1.103.1"
+  }
+}
