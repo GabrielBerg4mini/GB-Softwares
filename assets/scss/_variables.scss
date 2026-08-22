@@ -1,0 +1,12 @@
+@use "colors" as c;
+
+$theme-colors: (
+  "primary": c.$primary,
+  "secondary": c.$secondary,
+  "success": c.$success,
+  "danger": c.$danger,
+  "warning": c.$warning,
+  "info": c.$info,
+  "light": c.$light,
+  "dark": c.$dark,
+);

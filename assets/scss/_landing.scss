@@ -1,0 +1,557 @@
+@use "sass:color";
+@use "colors" as c;
+
+$surface: color.adjust(c.$dark, $lightness: 4%);
+$surface-2: color.adjust(c.$dark, $lightness: 8%);
+$border-subtle: rgba(255, 255, 255, 0.08);
+$text-muted-custom: rgba(255, 255, 255, 0.65);
+
+body {
+  background-color: c.$dark;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+a {
+  text-decoration: none;
+}
+
+.gb-eyebrow {
+  color: c.$primary;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.gb-section-title {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.gb-lead {
+  color: $text-muted-custom;
+  margin-bottom: 1.5rem;
+}
+
+.gb-section {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.gb-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.4rem;
+}
+
+.gb-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: c.$primary;
+
+  &:hover {
+    color: color.adjust(c.$primary, $lightness: 10%);
+  }
+}
+
+// ---------- Header ----------
+.gb-header {
+  background-color: c.$dark;
+  border-bottom: 1px solid $border-subtle;
+
+  .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &:hover,
+    &.active {
+      color: c.$primary;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $border-subtle;
+    padding: 0.4rem 0.55rem;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(174, 186, 80, 0.35);
+    }
+  }
+}
+
+// ---------- Hero ----------
+.gb-hero {
+  padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+
+.gb-hero-title {
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.gb-hero-img {
+  width: 100%;
+  height: auto;
+}
+
+// ---------- Features strip ----------
+.gb-features {
+  background-color: $surface;
+  border-color: $border-subtle !important;
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.gb-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid rgba(174, 186, 80, 0.35);
+  color: c.$primary;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.gb-feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.gb-feature-text {
+  color: $text-muted-custom;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+// ---------- Service cards ----------
+.gb-card-service {
+  background-color: $surface;
+  border: 1px solid $border-subtle;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba(174, 186, 80, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+.gb-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(174, 186, 80, 0.12);
+  color: c.$primary;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.gb-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.gb-card-text {
+  color: $text-muted-custom;
+  font-size: 0.9rem;
+}
+
+// ---------- Portfolio ----------
+.gb-portfolio-thumb {
+  aspect-ratio: 893 / 696;
+  border-radius: 0.75rem;
+  background-color: $surface-2;
+  border: 1px solid $border-subtle;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+.gb-portfolio-item:hover .gb-portfolio-thumb img {
+  transform: scale(1.08);
+}
+
+.gb-portfolio-item:hover .gb-portfolio-thumb {
+  border-color: rgba(174, 186, 80, 0.4);
+}
+
+.gb-portfolio-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.gb-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid $border-subtle;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(174, 186, 80, 0.4);
+    color: c.$primary;
+  }
+}
+
+.gb-carousel-indicators {
+  position: static !important;
+  margin: 2rem 0 0 !important;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  [data-bs-target] {
+    box-sizing: border-box;
+    flex: none;
+    width: 0.55rem;
+    height: 0.55rem;
+    padding: 0;
+    margin: 0;
+    text-indent: -9999px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    background-clip: padding-box;
+    opacity: 1;
+    transition: width 0.2s ease, background-color 0.2s ease;
+  }
+
+  .active {
+    background-color: c.$primary;
+    width: 1.4rem;
+    border-radius: 1rem;
+  }
+}
+
+.gb-portfolio-subtitle {
+  color: $text-muted-custom;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+// ---------- About ----------
+.gb-about-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gb-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    min-width: 6rem;
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: var(--gb-delay, 0s);
+
+    &.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.gb-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(174, 186, 80, 0.12);
+  color: c.$primary;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gb-stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.gb-stat-label {
+  color: $text-muted-custom;
+  font-size: 0.85rem;
+}
+
+// ---------- Process ----------
+.gb-step {
+  height: 100%;
+  padding: 1.75rem;
+  border: 1px solid $border-subtle;
+  border-radius: 0.75rem;
+  background-color: $surface;
+}
+
+.gb-step-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: c.$primary;
+  margin-bottom: 0.75rem;
+}
+
+.gb-step-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.gb-step-text {
+  color: $text-muted-custom;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+// ---------- CTA ----------
+.gb-cta-box {
+  background-color: $surface;
+  border: 1px solid $border-subtle;
+  border-radius: 1rem;
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+.gb-cta-mark {
+  opacity: 0.9;
+}
+
+.gb-cta-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gb-cta-text {
+  color: $text-muted-custom;
+}
+
+// ---------- Footer ----------
+.gb-footer {
+  background-color: color.adjust(c.$dark, $lightness: -2%);
+  border-top: 1px solid $border-subtle;
+}
+
+.gb-footer-top {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+}
+
+.gb-footer-text {
+  color: $text-muted-custom;
+  font-size: 0.9rem;
+}
+
+.gb-footer-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.gb-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  a,
+  span {
+    color: $text-muted-custom;
+    font-size: 0.9rem;
+  }
+
+  a:hover {
+    color: c.$primary;
+  }
+}
+
+.gb-footer-contact li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+
+  i {
+    color: c.$primary;
+    flex-shrink: 0;
+  }
+
+  a,
+  span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.gb-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding: 0;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid $border-subtle;
+    color: rgba(255, 255, 255, 0.75);
+
+    &:hover {
+      color: c.$primary;
+      border-color: rgba(174, 186, 80, 0.4);
+    }
+  }
+}
+
+.gb-footer-bottom {
+  border-top: 1px solid $border-subtle;
+  padding-top: 1.25rem;
+  padding-bottom: 5rem;
+  font-size: 0.85rem;
+  color: $text-muted-custom;
+
+  a {
+    color: $text-muted-custom;
+
+    &:hover {
+      color: c.$primary;
+    }
+  }
+}
+
+// ---------- WhatsApp float button ----------
+.gb-whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .gb-whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+// ---------- Legal pages (Política de Privacidade / Termos de Uso) ----------
+.gb-legal {
+  max-width: 760px;
+
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h2:first-of-type {
+    margin-top: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: c.$primary;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $text-muted-custom;
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+
+    li {
+      color: $text-muted-custom;
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  strong {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  a {
+    color: c.$primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
