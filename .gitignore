@@ -1,1 +1,6 @@
 node_modules/
+
+# Gerados pelo build (npm run build) — o GitHub Actions gera de novo a cada deploy
+assets/css/
+assets/fonts/
+assets/js/bootstrap.bundle.min.js
