@@ -555,3 +555,57 @@ a {
     }
   }
 }
+
+// ---------- FAQ ----------
+.gb-faq {
+  .accordion-item {
+    background-color: $surface;
+    border: 1px solid $border-subtle;
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-header {
+    margin: 0;
+  }
+
+  .accordion-button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+
+    &:not(.collapsed) {
+      color: c.$primary;
+      background-color: rgba(174, 186, 80, 0.08);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(174, 186, 80, 0.25);
+    }
+  }
+
+  .gb-faq-icon {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding-left: 1rem;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .accordion-button:not(.collapsed) .gb-faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-body {
+    padding: 0 1.5rem 1.5rem;
+    color: $text-muted-custom;
+    line-height: 1.7;
+  }
+}
