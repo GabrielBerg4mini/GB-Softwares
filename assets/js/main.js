@@ -67,9 +67,57 @@ function initCurrentYear() {
   if (el) el.textContent = new Date().getFullYear();
 }
 
+function initCookieBanner() {
+  const banner = document.getElementById("gbCookieBanner");
+  const acceptBtn = document.getElementById("gbCookieAccept");
+  const rejectBtn = document.getElementById("gbCookieReject");
+  if (!banner || !acceptBtn || !rejectBtn) return;
+
+  const STORAGE_KEY = "gb-cookie-consent";
+  const waButton = document.querySelector(".gb-whatsapp-float");
+  const baseBottom = waButton ? parseFloat(getComputedStyle(waButton).bottom) || 0 : 0;
+
+  const shiftWhatsApp = (shift) => {
+    if (!waButton) return;
+    waButton.style.bottom = shift ? `${baseBottom + banner.offsetHeight + 16}px` : "";
+  };
+
+  let consentGiven = true;
+  try {
+    consentGiven = Boolean(localStorage.getItem(STORAGE_KEY));
+  } catch (error) {
+    consentGiven = true;
+  }
+
+  if (!consentGiven) {
+    requestAnimationFrame(() => {
+      banner.classList.add("show");
+      shiftWhatsApp(true);
+    });
+  }
+
+  const resolveConsent = (choice) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, choice);
+    } catch (error) {
+      // Armazenamento indisponível (ex.: navegação privada) — apenas oculta o banner nesta sessão.
+    }
+    banner.classList.remove("show");
+    shiftWhatsApp(false);
+  };
+
+  acceptBtn.addEventListener("click", () => resolveConsent("accepted"));
+  rejectBtn.addEventListener("click", () => resolveConsent("rejected"));
+
+  window.addEventListener("resize", () => {
+    if (banner.classList.contains("show")) shiftWhatsApp(true);
+  });
+}
+
 document.addEventListener("gb:includes-loaded", () => {
   initScrollSpy();
   initNavLinks();
   initStatsAnimation();
   initCurrentYear();
+  initCookieBanner();
 });

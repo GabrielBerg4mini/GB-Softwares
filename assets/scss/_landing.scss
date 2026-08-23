@@ -485,7 +485,7 @@ a {
   font-size: 1.75rem;
   line-height: 1;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, bottom 0.3s ease;
 
   &:hover {
     color: #fff;
@@ -652,4 +652,55 @@ a {
 .gb-testimonial-role {
   color: $text-muted-custom;
   font-size: 0.85rem;
+}
+
+// ---------- Cookie banner ----------
+.gb-cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1045;
+  padding: 1.25rem;
+  background-color: $surface-2;
+  border-top: 1px solid $border-subtle;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+
+  &.show {
+    transform: translateY(0);
+  }
+}
+
+.gb-cookie-banner-inner {
+  max-width: 1140px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gb-cookie-text {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+
+  a {
+    color: c.$primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.gb-cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
