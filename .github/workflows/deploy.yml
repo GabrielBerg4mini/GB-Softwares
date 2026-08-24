@@ -36,7 +36,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p dist
-          cp -r index.html assets parts pages dist/
+          cp -r index.html assets parts pages sitemap.xml robots.txt dist/
           rm -rf dist/assets/scss
 
       - name: Setup Pages
