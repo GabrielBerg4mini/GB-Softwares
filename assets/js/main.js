@@ -104,6 +104,10 @@ function initCookieBanner() {
     }
     banner.classList.remove("show");
     shiftWhatsApp(false);
+
+    if (choice === "accepted") {
+      document.dispatchEvent(new CustomEvent("gb:cookie-consent-accepted"));
+    }
   };
 
   acceptBtn.addEventListener("click", () => resolveConsent("accepted"));
