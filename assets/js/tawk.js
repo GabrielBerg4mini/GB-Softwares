@@ -18,6 +18,13 @@
     loaded = true;
 
     window.Tawk_API = window.Tawk_API || {};
+    // Alinha o balão do chat com o botão do WhatsApp (mesma margem lateral e mesmo tamanho).
+    window.Tawk_API.customStyle = {
+      visibility: {
+        desktop: { position: "br", xOffset: 24, yOffset: 20 },
+        mobile: { position: "br", xOffset: 16, yOffset: 16 },
+      },
+    };
     window.Tawk_LoadStart = new Date();
 
     const script = document.createElement("script");
