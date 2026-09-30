@@ -11,8 +11,9 @@
     "build:css": "sass assets/scss/index.scss assets/css/style.css --style=compressed --no-source-map",
     "watch:css": "sass assets/scss/index.scss assets/css/style.css --watch",
     "copy:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/bootstrap.bundle.min.js",
+    "copy:swiper": "cp node_modules/swiper/swiper-bundle.min.js assets/js/swiper-bundle.min.js && mkdir -p assets/css && cp node_modules/swiper/swiper-bundle.min.css assets/css/swiper-bundle.min.css",
     "copy:fonts": "mkdir -p assets/fonts && cp node_modules/bootstrap-icons/font/fonts/* assets/fonts/",
-    "build": "npm run build:css && npm run copy:js && npm run copy:fonts"
+    "build": "npm run build:css && npm run copy:js && npm run copy:swiper && npm run copy:fonts"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/GabrielBerg4mini/GB-Softwares#readme",
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1"
+    "bootstrap-icons": "^1.13.1",
+    "swiper": "^14.3.0"
   },
   "devDependencies": {
     "sass": "^1.103.1"

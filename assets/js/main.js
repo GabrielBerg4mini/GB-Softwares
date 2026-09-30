@@ -62,6 +62,52 @@ function initStatsAnimation() {
   items.forEach((item) => observer.observe(item));
 }
 
+function initSwipers() {
+  if (!window.Swiper) return;
+
+  const pagination = (root) => ({
+    el: root.querySelector(".gb-swiper-pagination"),
+    clickable: true,
+  });
+
+  const portfolio = document.querySelector(".gb-portfolio-swiper");
+  if (portfolio) {
+    new Swiper(portfolio, {
+      loop: true,
+      centeredSlides: true,
+      speed: 600,
+      spaceBetween: 24,
+      slidesPerView: 1.15,
+      breakpoints: {
+        576: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
+      },
+      navigation: {
+        prevEl: ".gb-portfolio-prev",
+        nextEl: ".gb-portfolio-next",
+      },
+      pagination: pagination(portfolio),
+    });
+  }
+
+  const testimonials = document.querySelector(".gb-testimonials-swiper");
+  if (testimonials) {
+    new Swiper(testimonials, {
+      loop: true,
+      speed: 700,
+      spaceBetween: 24,
+      slidesPerView: 1,
+      grabCursor: true,
+      autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
+      },
+      pagination: pagination(testimonials),
+    });
+  }
+}
+
 function initCurrentYear() {
   const el = document.getElementById("gbCurrentYear");
   if (el) el.textContent = new Date().getFullYear();
@@ -122,6 +168,7 @@ document.addEventListener("gb:includes-loaded", () => {
   initScrollSpy();
   initNavLinks();
   initStatsAnimation();
+  initSwipers();
   initCurrentYear();
   initCookieBanner();
 });

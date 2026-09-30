@@ -1,6 +1,6 @@
 <section id="portfolio" class="gb-section" aria-label="Portfólio">
   <div class="container">
-    <div class="row align-items-end gy-4 mb-5">
+    <div class="row align-items-end gy-4 mb-5 gb-portfolio-head">
       <div class="col-lg-8">
         <p class="gb-eyebrow">Portfólio</p>
         <h2 class="gb-section-title">Alguns projetos desenvolvidos</h2>
@@ -8,155 +8,110 @@
           Projetos feitos com foco em design, performance e experiência do usuário.
         </p>
       </div>
-      <div class="col-lg-4 d-flex justify-content-lg-end gap-2">
-        <button class="gb-carousel-arrow" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+      <div class="col-lg-4 d-flex justify-content-end gap-2">
+        <button class="gb-carousel-arrow gb-portfolio-prev" type="button">
           <i class="bi bi-arrow-left" aria-hidden="true"></i>
           <span class="visually-hidden">Projetos anteriores</span>
         </button>
-        <button class="gb-carousel-arrow" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <button class="gb-carousel-arrow gb-portfolio-next" type="button">
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
           <span class="visually-hidden">Próximos projetos</span>
         </button>
       </div>
     </div>
 
-    <div id="portfolioCarousel" class="carousel slide" data-bs-interval="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row gy-4">
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/bank.svg" alt="Site institucional da IQ Pago" width="893" height="696">
-                </div>
-                <h3 class="gb-portfolio-title">IQ Pago</h3>
-                <p class="gb-portfolio-subtitle">Landing Page</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/clicacraf.svg" alt="Site institucional da Clínica FT" width="893" height="696">
-                </div>
-                <h3 class="gb-portfolio-title">Clínica FT</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/evaluar.svg" alt="Site institucional da Evaluar Engenharia" width="893" height="696">
-                </div>
-                <h3 class="gb-portfolio-title">Evaluar Engenharia</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-          </div>
+    <div class="swiper gb-swiper gb-portfolio-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/advocacia-associados/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Advocacia & Associados em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-advogado-1.svg" alt="Prévia do site Advocacia & Associados" width="893" height="696"None>
+              </div>
+              <h3 class="gb-portfolio-title">Advocacia & Associados</h3>
+              <p class="gb-portfolio-subtitle">Advocacia Tributária<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
         </div>
-
-        <div class="carousel-item">
-          <div class="row gy-4">
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/feig.svg" alt="Site institucional da FEIG" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">FEIG</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/feig-colegio.svg" alt="Site institucional do Colégio Rubens Romanelli" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Colégio Rubens Romanelli</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/grupo-foco.svg" alt="Site institucional do Grupo Foco" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Grupo Foco</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-          </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/bruno-cavalcanti/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Bruno Cavalcanti Advocacia em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-advogado-2.svg" alt="Prévia do site Bruno Cavalcanti Advocacia" width="893" height="696"None>
+              </div>
+              <h3 class="gb-portfolio-title">Bruno Cavalcanti Advocacia</h3>
+              <p class="gb-portfolio-subtitle">Advocacia Empresarial<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
         </div>
-
-        <div class="carousel-item">
-          <div class="row gy-4">
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/larys.svg" alt="Site institucional da Larys" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Larys</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/multirbs.svg" alt="Site institucional da Multi RBS" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Multi RBS</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/nova-lima.svg" alt="Site institucional da Nova Lima" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Nova Lima</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-          </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/almeida-cordeiro/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Almeida Cordeiro Advocacia em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-advogado-3.svg" alt="Prévia do site Almeida Cordeiro Advocacia" width="893" height="696"None>
+              </div>
+              <h3 class="gb-portfolio-title">Almeida Cordeiro Advocacia</h3>
+              <p class="gb-portfolio-subtitle">Direito Societário<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
         </div>
-
-        <div class="carousel-item">
-          <div class="row gy-4">
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/paladeli.svg" alt="Loja online da Paladeli" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">Paladeli</h3>
-                <p class="gb-portfolio-subtitle">Loja Online</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/testcar.svg" alt="Site institucional da TestCar Consulta" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">TestCar Consulta</h3>
-                <p class="gb-portfolio-subtitle">Landing Page</p>
-              </article>
-            </div>
-            <div class="col-6 col-md-4">
-              <article class="gb-portfolio-item">
-                <div class="gb-portfolio-thumb">
-                  <img src="assets/images/projects/vsalpha.svg" alt="Site institucional da VS Alpha" width="893" height="696" loading="lazy">
-                </div>
-                <h3 class="gb-portfolio-title">VS Alpha</h3>
-                <p class="gb-portfolio-subtitle">Site Institucional</p>
-              </article>
-            </div>
-          </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/studio-arquitetura/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Studio Arquitetura em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-arquiteto-1.svg" alt="Prévia do site Studio Arquitetura" width="893" height="696" loading="lazy">
+              </div>
+              <h3 class="gb-portfolio-title">Studio Arquitetura</h3>
+              <p class="gb-portfolio-subtitle">Arquitetura<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/concreto-estudio/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site CONCRETO Estúdio em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-arquitetura-2.svg" alt="Prévia do site CONCRETO Estúdio" width="893" height="696" loading="lazy">
+              </div>
+              <h3 class="gb-portfolio-title">CONCRETO Estúdio</h3>
+              <p class="gb-portfolio-subtitle">Arquitetura<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/clinica-estetica-premium/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Estética Premium em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-clinica-1.svg" alt="Prévia do site Estética Premium" width="893" height="696" loading="lazy">
+              </div>
+              <h3 class="gb-portfolio-title">Estética Premium</h3>
+              <p class="gb-portfolio-subtitle">Clínica de Estética<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/clinica-integrativa/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Clínica Integrativa em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-clinica-2.svg" alt="Prévia do site Clínica Integrativa" width="893" height="696" loading="lazy">
+              </div>
+              <h3 class="gb-portfolio-title">Clínica Integrativa</h3>
+              <p class="gb-portfolio-subtitle">Estética Natural<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="gb-portfolio-item">
+            <a href="https://projetos.gbsoftwares.com.br/sites/digital-smile-clinic/index.html" target="_blank" rel="noopener noreferrer" class="gb-portfolio-link" aria-label="Abrir o site Digital Smile Clinic em uma nova aba">
+              <div class="gb-portfolio-thumb">
+                <img src="assets/images/projects/site-clinica-3.svg" alt="Prévia do site Digital Smile Clinic" width="893" height="696" loading="lazy">
+              </div>
+              <h3 class="gb-portfolio-title">Digital Smile Clinic</h3>
+              <p class="gb-portfolio-subtitle">Odontologia Digital<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></p>
+            </a>
+          </article>
         </div>
       </div>
-
-      <div class="carousel-indicators gb-carousel-indicators">
-        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Grupo de projetos 1"></button>
-        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Grupo de projetos 2"></button>
-        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Grupo de projetos 3"></button>
-        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Grupo de projetos 4"></button>
-      </div>
+      <div class="swiper-pagination gb-swiper-pagination"></div>
     </div>
   </div>
 </section>
