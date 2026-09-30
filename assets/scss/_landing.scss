@@ -48,6 +48,7 @@ a {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   padding: 0.7rem 1.4rem;
+  justify-content: center;
 }
 
 .gb-link-arrow {
@@ -147,7 +148,9 @@ a {
   border: 1px solid $border-subtle;
   border-radius: 0.75rem;
   padding: 1.75rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     border-color: rgba(174, 186, 80, 0.4);
@@ -180,32 +183,63 @@ a {
 }
 
 // ---------- Portfolio ----------
+@media (max-width: 991.98px) {
+  .gb-portfolio-head .gb-section-title {
+    font-size: 5vw;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .gb-portfolio-head .gb-section-title {
+    font-size: 2rem;
+  }
+}
+
 .gb-portfolio-thumb {
   aspect-ratio: 893 / 696;
-  border-radius: 0.75rem;
-  background-color: $surface-2;
-  border: 1px solid $border-subtle;
   overflow: hidden;
   margin-bottom: 1rem;
-  transition: border-color 0.2s ease;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    object-fit: contain;
   }
 }
 
-.gb-portfolio-item:hover .gb-portfolio-thumb img {
-  transform: scale(1.08);
+.gb-portfolio-swiper {
+  padding-block: 1.5rem 3.5rem;
+
+  .swiper-slide {
+    transform: scale(0.88);
+    opacity: 0.55;
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.06);
+    opacity: 1;
+  }
 }
 
-.gb-portfolio-item:hover .gb-portfolio-thumb {
-  border-color: rgba(174, 186, 80, 0.4);
+.gb-portfolio-link {
+  display: block;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+
+    .gb-portfolio-title {
+      color: c.$primary;
+    }
+  }
 }
 
 .gb-portfolio-title {
+  transition: color 0.2s ease;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.15rem;
@@ -223,7 +257,9 @@ a {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.85);
   font-size: 1.1rem;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 
   &:hover {
     border-color: rgba(174, 186, 80, 0.4);
@@ -231,37 +267,41 @@ a {
   }
 }
 
-.gb-carousel-indicators {
-  position: static !important;
-  margin: 2rem 0 0 !important;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+// ---------- Swiper ----------
+.gb-swiper {
+  padding-bottom: 3rem;
+  overflow: hidden;
 
-  [data-bs-target] {
-    box-sizing: border-box;
-    flex: none;
-    width: 0.55rem;
-    height: 0.55rem;
-    padding: 0;
-    margin: 0;
-    text-indent: -9999px;
-    border: none;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.25);
-    background-clip: padding-box;
-    opacity: 1;
-    transition: width 0.2s ease, background-color 0.2s ease;
+  .swiper-slide {
+    height: auto;
   }
 
-  .active {
-    background-color: c.$primary;
-    width: 1.4rem;
-    border-radius: 1rem;
+  .gb-swiper-pagination {
+    bottom: 0;
+
+    .swiper-pagination-bullet {
+      width: 0.55rem;
+      height: 0.55rem;
+      margin: 0 0.25rem !important;
+      background-color: rgba(255, 255, 255, 0.25);
+      opacity: 1;
+      transition:
+        width 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 1.4rem;
+      border-radius: 1rem;
+      background-color: c.$primary;
+    }
   }
 }
 
 .gb-portfolio-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   color: $text-muted-custom;
   font-size: 0.875rem;
   margin-bottom: 0;
@@ -275,9 +315,9 @@ a {
 }
 
 .gb-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 1rem;
   list-style: none;
   padding: 0;
   margin: 1.5rem 0 0;
@@ -285,10 +325,12 @@ a {
   li {
     display: flex;
     flex-direction: column;
-    min-width: 6rem;
+    min-width: 0;
     opacity: 0;
     transform: translateY(14px) scale(0.94);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     transition-delay: var(--gb-delay, 0s);
 
     &.is-visible {
@@ -320,6 +362,16 @@ a {
 .gb-stat-label {
   color: $text-muted-custom;
   font-size: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+  .gb-stat-number {
+    font-size: 1.15rem;
+  }
+
+  .gb-stat-label {
+    font-size: 0.75rem;
+  }
 }
 
 // ---------- Process ----------
@@ -471,21 +523,24 @@ a {
 // ---------- WhatsApp float button ----------
 .gb-whatsapp-float {
   position: fixed;
-  right: 1.5rem;
+  right: 1.8rem;
   bottom: 6rem;
   z-index: 1040;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: #25d366;
   color: #fff;
   font-size: 1.75rem;
   line-height: 1;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, bottom 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    bottom 0.3s ease;
 
   &:hover {
     color: #fff;
@@ -496,11 +551,7 @@ a {
 
 @media (max-width: 575.98px) {
   .gb-whatsapp-float {
-    right: 1rem;
-    bottom: 5rem;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
+    bottom: 5.25rem;
   }
 }
 
@@ -613,6 +664,7 @@ a {
 // ---------- Testimonials ----------
 .gb-testimonial {
   height: 100%;
+  transition: border-color 0.2s ease;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -620,6 +672,10 @@ a {
   border: 1px solid $border-subtle;
   border-radius: 0.75rem;
   background-color: $surface;
+
+  &:hover {
+    border-color: rgba(174, 186, 80, 0.4);
+  }
 }
 
 .gb-testimonial-icon {
