@@ -159,9 +159,12 @@ function initCookieBanner() {
   acceptBtn.addEventListener("click", () => resolveConsent("accepted"));
   rejectBtn.addEventListener("click", () => resolveConsent("rejected"));
 
-  window.addEventListener("resize", () => {
+  const refreshShift = () => {
     if (banner.classList.contains("show")) shiftWhatsApp(true);
-  });
+  };
+
+  window.addEventListener("resize", refreshShift);
+  document.addEventListener("gb:language-changed", refreshShift);
 }
 
 document.addEventListener("gb:includes-loaded", () => {
