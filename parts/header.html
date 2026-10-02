@@ -16,39 +16,57 @@
         data-bs-target="#gbNavbar"
         aria-controls="gbNavbar"
         aria-expanded="false"
-        aria-label="Abrir menu de navegação"
+        aria-label="Abrir menu de navegação" data-i18n-attr="aria-label:nav.toggle"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="gbNavbar">
         <ul class="navbar-nav mx-lg-auto gap-lg-2 py-3 py-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Início</a>
+            <a class="nav-link" href="#inicio" data-i18n="nav.home">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#servicos">Serviços</a>
+            <a class="nav-link" href="#servicos" data-i18n="nav.services">Serviços</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfólio</a>
+            <a class="nav-link" href="#portfolio" data-i18n="nav.portfolio">Portfólio</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="nav.about">Sobre</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#processo">Processo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link" href="#processo" data-i18n="nav.process">Processo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contato">Contato</a>
+            <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato" data-i18n="nav.contact">Contato</a>
           </li>
         </ul>
+        <div class="dropdown gb-lang me-lg-3 mb-3 mb-lg-0">
+          <button
+            class="btn btn-sm btn-outline-light rounded-pill gb-lang-toggle dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-label="Idioma"
+            data-i18n-attr="aria-label:lang.label"
+          >
+            <i class="bi bi-globe2" aria-hidden="true"></i>
+            <span class="gb-lang-current">PT-BR</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark gb-lang-menu">
+            <li><button class="dropdown-item" type="button" data-lang="pt-BR">Português (Brasil)</button></li>
+            <li><button class="dropdown-item" type="button" data-lang="pt-PT">Português (Portugal)</button></li>
+            <li><button class="dropdown-item" type="button" data-lang="en">English</button></li>
+          </ul>
+        </div>
         <a
           href="https://wa.me/5519996241672?text=Quero%20realizar%20um%20or%C3%A7amento!"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline-primary rounded-pill gb-btn-arrow"
         >
-          Orçamento <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          <span data-i18n="nav.quote">Orçamento</span> <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
     </div>

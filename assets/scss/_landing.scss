@@ -93,6 +93,36 @@ a {
   }
 }
 
+// ---------- Language switcher ----------
+.gb-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-color: $border-subtle;
+
+  &:hover,
+  &.show {
+    border-color: rgba(174, 186, 80, 0.4);
+    background-color: transparent;
+    color: c.$primary;
+  }
+}
+
+.gb-lang-menu {
+  --bs-dropdown-bg: #{$surface-2};
+  --bs-dropdown-border-color: #{$border-subtle};
+  --bs-dropdown-link-active-bg: rgba(174, 186, 80, 0.15);
+  --bs-dropdown-link-active-color: #{c.$primary};
+  font-size: 0.875rem;
+
+  .dropdown-item.active {
+    font-weight: 600;
+  }
+}
+
 // ---------- Hero ----------
 .gb-hero {
   padding-block: clamp(2.5rem, 7vw, 6rem);
