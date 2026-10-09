@@ -212,6 +212,138 @@ a {
   font-size: 0.9rem;
 }
 
+// ---------- Hero points ----------
+.gb-hero-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  color: $text-muted-custom;
+  font-size: 0.9rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .bi {
+    color: c.$primary;
+  }
+}
+
+// ---------- Pricing ----------
+.gb-price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background-color: $surface;
+  border: 1px solid $border-subtle;
+  border-radius: 1rem;
+
+  &.is-featured {
+    border-color: rgba(174, 186, 80, 0.55);
+    background-color: $surface-2;
+
+    .gb-price-value {
+      color: c.$primary;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+    align-self: stretch;
+  }
+}
+
+.gb-price-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: c.$primary;
+  color: c.$dark;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.gb-price-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gb-price-text {
+  color: $text-muted-custom;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.gb-price-from {
+  color: $text-muted-custom;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.gb-price-value {
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.gb-price-delivery {
+  color: $text-muted-custom;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+
+  strong {
+    color: #fff;
+  }
+}
+
+.gb-price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  font-size: 0.95rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .bi {
+    flex: none;
+    margin-top: 0.15rem;
+    color: c.$primary;
+  }
+
+  .is-extra {
+    color: $text-muted-custom;
+
+    .bi {
+      color: $text-muted-custom;
+    }
+  }
+}
+
+.gb-price-note {
+  max-width: 54rem;
+  margin: 1.75rem 0 0;
+  color: $text-muted-custom;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
 // ---------- Portfolio ----------
 @media (max-width: 991.98px) {
   .gb-portfolio-head .gb-section-title {
@@ -342,66 +474,6 @@ a {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-.gb-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 0;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    opacity: 0;
-    transform: translateY(14px) scale(0.94);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-    transition-delay: var(--gb-delay, 0s);
-
-    &.is-visible {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
-
-.gb-stat-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: rgba(174, 186, 80, 0.12);
-  color: c.$primary;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.gb-stat-number {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.gb-stat-label {
-  color: $text-muted-custom;
-  font-size: 0.85rem;
-}
-
-@media (max-width: 575.98px) {
-  .gb-stat-number {
-    font-size: 1.15rem;
-  }
-
-  .gb-stat-label {
-    font-size: 0.75rem;
-  }
 }
 
 // ---------- Process ----------
@@ -689,55 +761,6 @@ a {
     color: $text-muted-custom;
     line-height: 1.7;
   }
-}
-
-// ---------- Testimonials ----------
-.gb-testimonial {
-  height: 100%;
-  transition: border-color 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 1.75rem;
-  border: 1px solid $border-subtle;
-  border-radius: 0.75rem;
-  background-color: $surface;
-
-  &:hover {
-    border-color: rgba(174, 186, 80, 0.4);
-  }
-}
-
-.gb-testimonial-icon {
-  font-size: 1.75rem;
-  line-height: 1;
-  color: c.$primary;
-  margin-bottom: 0.75rem;
-}
-
-.gb-testimonial-quote {
-  flex-grow: 1;
-  margin: 0 0 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.gb-testimonial-author {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
-  border-top: 1px solid $border-subtle;
-}
-
-.gb-testimonial-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.gb-testimonial-role {
-  color: $text-muted-custom;
-  font-size: 0.85rem;
 }
 
 // ---------- Cookie banner ----------
