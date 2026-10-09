@@ -21,47 +21,6 @@ function initNavLinks() {
   });
 }
 
-function animateCount(el, duration = 1200) {
-  const target = Number(el.dataset.countTo);
-  const prefix = el.dataset.prefix || "";
-  const suffix = el.dataset.suffix || "";
-  const start = performance.now();
-
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = `${prefix}${Math.round(eased * target)}${suffix}`;
-    if (progress < 1) requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
-}
-
-function initStatsAnimation() {
-  const items = Array.from(document.querySelectorAll("#sobre .gb-stats li"));
-  if (!items.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const item = entry.target;
-        item.style.setProperty("--gb-delay", `${items.indexOf(item) * 0.12}s`);
-        item.classList.add("is-visible");
-
-        const number = item.querySelector(".gb-stat-number[data-count-to]");
-        if (number) animateCount(number);
-
-        obs.unobserve(item);
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  items.forEach((item) => observer.observe(item));
-}
-
 function initSwipers() {
   if (!window.Swiper) return;
 
@@ -87,23 +46,6 @@ function initSwipers() {
         nextEl: ".gb-portfolio-next",
       },
       pagination: pagination(portfolio),
-    });
-  }
-
-  const testimonials = document.querySelector(".gb-testimonials-swiper");
-  if (testimonials) {
-    new Swiper(testimonials, {
-      loop: true,
-      speed: 700,
-      spaceBetween: 24,
-      slidesPerView: 1,
-      grabCursor: true,
-      autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-      breakpoints: {
-        768: { slidesPerView: 2 },
-        992: { slidesPerView: 3 },
-      },
-      pagination: pagination(testimonials),
     });
   }
 }
@@ -170,7 +112,6 @@ function initCookieBanner() {
 document.addEventListener("gb:includes-loaded", () => {
   initScrollSpy();
   initNavLinks();
-  initStatsAnimation();
   initSwipers();
   initCurrentYear();
   initCookieBanner();
