@@ -63,10 +63,11 @@
       });
     });
 
-    // Mensagem pré-preenchida dos links de WhatsApp
+    // Mensagem pré-preenchida dos links de WhatsApp (data-i18n-wa escolhe outra mensagem)
     document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
       const base = link.href.split("?")[0];
-      link.href = `${base}?text=${encodeURIComponent(dict["wa.message"])}`;
+      const message = dict[link.dataset.i18nWa] || dict["wa.message"];
+      link.href = `${base}?text=${encodeURIComponent(message)}`;
     });
 
     document.documentElement.lang = lang;
