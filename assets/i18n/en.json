@@ -44,7 +44,7 @@
   "about.aria": "About GB Softwares",
   "about.imgAlt": "Desk with a computer displaying the GB Softwares logo",
   "about.eyebrow": "About",
-  "about.title": "Hi, I'm Gabriel. You talk directly to me.",
+  "about.title": "GB Softwares: you talk directly to whoever builds your site",
   "about.lead": "I build WordPress websites with clean code and no unnecessary plugins, so they load fast and take little work day to day.",
   "process.aria": "Work process",
   "process.eyebrow": "Process",
@@ -135,5 +135,7 @@
   "about.lead2": "No middlemen: you talk directly to me, from the first contact until the site is live.",
   "about.cta": "Talk to me on WhatsApp",
   "faq.5.q": "How much does it cost? Is there anything hidden?",
-  "faq.5.a": "Landing page from R$ 500 and corporate website (up to 4 pages) from R$ 800, with a floating button and WhatsApp calls to action. The contact form is optional and has an extra cost, agreed before we start. You pay the domain and hosting directly to the provider."
+  "faq.5.a": "Landing page from R$ 500 and corporate website (up to 4 pages) from R$ 800, with a floating button and WhatsApp calls to action. The contact form is optional and has an extra cost, agreed before we start. You pay the domain and hosting directly to the provider. Payment can be made via Pix, with a 50% deposit to start and 50% on delivery, or by credit card in up to 12 installments, with the interest paid by the customer.",
+  "guarantee.4.title": "Easy payment",
+  "guarantee.4.text": "Pix: 50% deposit to start and 50% on delivery. Or credit card in up to 12 installments, with the interest paid by the customer."
 }
