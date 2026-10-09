@@ -44,7 +44,7 @@
   "about.aria": "Sobre a GB Softwares",
   "about.imgAlt": "Secretária de trabalho com computador a mostrar o logótipo da GB Softwares",
   "about.eyebrow": "Sobre",
-  "about.title": "Olá, eu sou o Gabriel. Fala diretamente comigo.",
+  "about.title": "GB Softwares: fala diretamente com quem faz o seu site",
   "about.lead": "Desenvolvo sites em WordPress com código limpo e sem plugins desnecessários, para que carreguem rápido e deem pouco trabalho no dia a dia.",
   "process.aria": "Processo de trabalho",
   "process.eyebrow": "Processo",
@@ -135,5 +135,7 @@
   "about.lead2": "Sem intermediários: fala diretamente comigo, do primeiro contacto até o site estar online.",
   "about.cta": "Falar comigo no WhatsApp",
   "faq.5.q": "Quanto custa? Há algum custo escondido?",
-  "faq.5.a": "Landing page a partir de R$ 500 e site institucional (até 4 páginas) a partir de R$ 800, com botão flutuante e CTAs para o WhatsApp. O formulário de contacto é opcional e tem um acréscimo, combinado antes de começar. O domínio e o alojamento são pagos por si, diretamente ao fornecedor."
+  "faq.5.a": "Landing page a partir de R$ 500 e site institucional (até 4 páginas) a partir de R$ 800, com botão flutuante e CTAs para o WhatsApp. O formulário de contacto é opcional e tem um acréscimo, combinado antes de começar. O domínio e o alojamento são pagos por si, diretamente ao fornecedor. O pagamento pode ser feito por Pix, com 50% de sinal para começar e 50% na entrega, ou por cartão de crédito até 12x, com os juros a cargo do cliente.",
+  "guarantee.4.title": "Pagamento facilitado",
+  "guarantee.4.text": "Pix: 50% de sinal para começar e 50% na entrega. Ou cartão de crédito até 12x, com os juros a cargo do cliente."
 }
